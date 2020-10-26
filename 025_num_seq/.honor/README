@@ -1,0 +1,250 @@
+Numeric Sequences:
+==================
+
+For this assignment, you are going to write some code to work with
+numeric sequences. This assignment is broken down into 3 steps, each
+of which will be done in a different file. Each step has a few
+functions that you should write in it. You should write one function,
+test it, commit to git, then move on to the next one.
+
+When you finish, be sure to commit all the working versions of your
+files, then run the grade command.
+
+If you run out of time, be sure to commit a version of your code that
+has as much working as possible, then run grade.
+
+NOTE: You will NOT receive a grade instantly. This assignment has a
+hard deadline, and you will receive a grade ONCE after it. There is no
+regrading.
+
+Be sure that all of your code compiles with these options:
+ -std=gnu99 -Wall -Werror -pedantic
+
+********************Step 1 [30 points]********************
+For this step, you will work in step1.c. Open step1.c in emacs, and
+you will find that it is blank, except for one comment.
+
+***Step 1(A): Declare a function in step1.c called "seq1", which
+returns an int and takes one int (called x) as a parameter.
+
+The seq1 function should compute and return the x'th element of the
+sequence shown below:
+
+x         -3  -2  -1   0   1   2   3   4   5   6   7
+seq1(x)  -14 -11  -8  -5  -2   1   4   7  10  13  16
+
+Note that the seq1 function should *return* this value--it should not
+print it (nor anything else).
+
+Note also that your function should work correctly for numbers less
+than or greater than those shown here. 
+
+***Step 1(B): Write a main function, which tests your seq1
+function. You should use this to check that your seq1 works
+correctly. We will test your main function to ensure that it calls
+seq1 multiple times (you need more than 1 test case!) and prints
+the results. You will be graded on you test coverage.
+
+The format you should use to print each test case should be
+
+"seq1(%d) = %d\n"
+
+where the first %d is the parameter to seq1 (i.e., x), and the second
+%d is the result of seq1(x). 
+
+***Step 1(C): Write the function "print_seq1_range" which returns
+void, and takes two ints, "low" and "high" as parameters. 
+
+This function should print the values of seq1(x) for all xs between
+low (inclusive) and high (exclusive). These values should be separated
+by a comma and a space, and there should be a newline at the end of the line.
+
+For example print_seq1_range(0, 4) should print
+
+-5, -2, 1, 4
+
+Notice that the items are separated by ", ", but there is no extra
+comma at the end. For full credit, you should not print an extra comma
+at the end. If you print an extra comma at the end, you will only
+receive partial credit.
+
+Other examples of the output of this function are:
+
+print_seq1_range(-2, 6) would print
+
+-11, -8, -5, -2, 1, 4, 7, 10
+
+and print_seq1_range(7, 3) would print
+
+
+
+[that is, a blank line, as there is nothing in the range from 7 to
+3].
+
+print_seq1_range(0, 0) would also print
+
+
+
+[that is, a blank line (just "\n").]
+
+***Step 1(D): Add to your main to test print_seq1_range. You should
+call this multiple times. You should NOT remove your tests from Step
+1(B) for seq1, since we will check for those. As before, you will be
+graded on your test coverage.
+
+For each test case, you should print
+
+"print_seq1_range(%d, %d)\n"
+
+where the %ds are the parameters to print_seq1_range (in order: low,
+then high). After you print this line, you should call
+print_seq1_range(low, high), which will print its own results.
+
+********************Step 2 [33 points]********************
+For this step, you will work in step2.c. Open step2.c in emacs, and
+you will find that it is blank, except for one comment.
+
+***Step 2(A): Declare a function in step2.c called "seq2", which
+returns an int, and takes one int (called x) as a parameter.
+
+The seq2 function should compute and return the x'th element of the
+sequence shown below: 
+
+x        -3  -2  -1   0   1   2   3   4   5   6   7   8   9  10  11  12
+seq2(x)  23  14   7   2  -1  -2  -1   2   7  14  23  34  47  62  79  98
+
+Note that the seq2 function should *return* this value, it should not
+print it (nor anything else). 
+
+Note also that your function should work correctly for numbers less
+than or greater than those shown here.
+
+***Step 2(B): Write a main function that tests your seq2 function. You
+should use this to check that your seq2 works correctly. We will test
+your main function to ensure that it calls seq2 multiple times (you
+need more than 1 test case!), and prints the results.
+
+The format of each test case should be
+
+"seq2(%d) = %d\n"
+
+where the first %d is the parameter to seq2, and the second %d is the
+result of seq2.
+
+***Step 2(C): Write a function called "sum_seq2" which returns an int,
+and takes two ints as parameters: "low" and "high".
+
+This function should sum the values of seq2(x) for xs ranging from low
+(inclusive) to high (exclusive). 
+
+For example, 
+sum_seq2(0, 2) should return 1 (because 2 + -1 = 1) 
+sum_seq2(3, 6) should return 8 (because -1 + 2 + 7 = 8)
+sum_seq2(9, 7) should return 0, because low is less than high,
+               so there are no elements in that range.
+
+***Step 2(D): Add to your main to test sum_seq2 (do not remove your
+tests for seq2--keep them there!). Again, we will check that your main
+calls sum_seq2 and that it prints the results.
+
+The format for each test case should be
+
+"sum_seq2(%d, %d) = %d\n"
+
+where the first two %ds are the parameters to sum_seq2 (in order: low,
+then high), and the last %d is the result of sum_seq2(low, high). 
+
+********************Step 3 [37 points]********************
+For this step, you will work in step3.c. Open step3.c in emacs, and
+you will find that it is blank, except for one comment.
+
+***Step 3(A): Declare a function in step3.c called "seq3", which
+returns an int, and takes two ints (called x and y) as parameters.
+
+The values for seq3(x, y) are shown in the table below, with x values
+being listed at the top of each column, and y values being listed at
+the left of each row. The corresponding entry in the table is the
+value of seq3(x, y).
+
+                             x
+        -5  -4  -3  -2  -1   0   1   2   3   4   5
+     +---------------------------------------------
+  -5 |   9   8   7   6   5   4   3   2   1   0  -1
+  -4 |   3   3   3   3   3   3   3   3   3   3   3
+  -3 |  -3  -2  -1   0   1   2   3   4   5   6   7
+  -2 |  -9  -7  -5  -3  -1   1   3   5   7   9  11
+  -1 | -15 -12  -9  -6  -3   0   3   6   9  12  15
+y  0 | -21 -17 -13  -9  -5  -1   3   7  11  15  19
+   1 | -27 -22 -17 -12  -7  -2   3   8  13  18  23
+   2 | -33 -27 -21 -15  -9  -3   3   9  15  21  27
+   3 | -39 -32 -25 -18 -11  -4   3  10  17  24  31
+   4 | -45 -37 -29 -21 -13  -5   3  11  19  27  35
+   5 | -51 -42 -33 -24 -15  -6   3  12  21  30  39
+
+For example, seq3(-4, -5) is 8, which you can see by looking at the
+column with -4 above it (for the x value) and the row with -5 to its
+left (for the y value), and then seeing that the value in the table
+there is 8. 
+
+As always, this sequence continues in both directions for both x and
+y, so your seq3 function should be able to handle larger and smaller
+values of both parameters than shown here.
+
+***Step 3(B): Write a main to test your seq3 function. As before, we
+expect you to call the function more than once and print the results.
+The format for each test case should be
+
+"seq3(%d, %d) = %d\n"
+
+where the first two %ds are the parameters to seq3 in order (x, then
+y) and the last is the result of seq3(x, y).
+
+***Step 3(C): Write the function "count_neg_seq3_range" which returns
+an int and takes 4 ints (xLow, xHi, yLow, yHi) as parameters.
+
+This function should count how many values of seq3(x, y) are negative
+when x ranges from xLow (inclusive) to xHi (exclusive) and y ranges
+from yLow (inclusive) to yHi (exclusive). If either [xLow, xHi) or
+[yLow, yHi) is empty, this function should return 0 (as there are no
+negative numbers in an empty range). 
+
+For example, count_neg_seq3_range(0, 2, 0, 3) should return 3 because
+the following values are negative:
+seq3(0, 0) is -1
+seq3(0, 1) is -2
+seq3(0, 2) is -3
+and these are non-negative:
+seq3(1, 0) is 3
+seq3(1, 1) is 3
+seq3(1, 2) is 3
+
+***Step 3(D): Add test cases for count_neg_seq3_range to your main. As
+before, do not remove the test cases for seq3, test on any cases that
+you want. Print the results with the format:
+
+"count_neg_seq3_range(%d, %d, %d, %d) = %d\n"
+
+Where the first four %ds are the parameters to count_neg_seq3_range
+(in order: xLow, xHigh, yLow, yHi), and the last is the result of
+count_neg_seq3_range.
+
+====================Reminders about the rules====================
+
+- Your work must be your own!
+- You may NOT consult with other students about
+  o high level approaches
+  o how to implement your algorithm in code
+  o how to debug your code
+  (Basically, you may not discuss anything particular to this
+  assignment). 
+- You may NOT look at another student's code,
+  nor show your code to anyone else.
+- You are responsible for keeping your code
+  private.
+- You may not look for solutions to this or similar problems online.
+- You may not use code from any other source.
+
++ You MAY consult All of Programming 
++ You MAY consult notes you wrote in your notebook.
++ You MAY consult the man pages.
++ You MAY ask the professor or TAs for clarification on the assignment.

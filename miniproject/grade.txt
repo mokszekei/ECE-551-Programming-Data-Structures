@@ -1,0 +1,12 @@
+Step 1:  50
+Step 2:  30
+Step 3:  18
+Step 4:  0
+Functionality:  98
+Testing multiplier:  0.98
+Quality multiplier:  0.98
+=================================
+Total:  94
+=================================
+Comments:
+The program works well for steps 1–2, but the volatility in step 3 is lower than expected. Testing documentation could be more thorough; explain outputs with examples, as well as inputs. Regarding quality, functions are well commented and abstracted. Classes are typically uppercase, and consider placing class interface in header file and implementation in cpp file. Please provide ‘make clean’. Should remove debugging output “Succeddfully destruct the class.” Overall, excellent work.

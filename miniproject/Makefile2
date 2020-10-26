@@ -1,0 +1,14 @@
+CFLAGS=-Wall -Werror --std=gnu++11 -pedantic -ggdb3
+
+mesh: main.o
+	g++ $(CFLAGS) -o mesh main.o
+main.o: mesh.cpp mesh.h
+	g++ $(CFLAGS) -o main.o -c mesh.cpp
+
+
+CFLAGS=-Wall -Werror --std=gnu++11 -pedantic -ggdb3
+
+rand_story: main.o
+        g++ $(CFLAGS) -o efficient_frontier main.o
+main.o: efficient_frontier.cpp efficient_frontier.h
+        g++ $(CFLAGS) -o main.o -c efficient_frontier.cpp

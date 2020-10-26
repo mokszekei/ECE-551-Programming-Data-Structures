@@ -1,0 +1,107 @@
+Grading at 04/18/2020:15:52:09.495555
+For commit ID 77b2238d71542e1deffdfb51edc569d57ed0dbc9
+Grading at Sat Apr 18 11:51:56 EDT 2020
+running passed-in stu_imp ./rand_story
+[32mSuccessfully compiled.[0m
+********************test case 1********************
+No command line args
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 1 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 1[0m
+********************test case 2********************
+Too few command line args
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 2 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 2[0m
+********************test case 3********************
+Too many command line args
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 3 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 3[0m
+********************test case 4********************
+Invalid story file
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 4 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 4[0m
+********************test case 5********************
+Invalid words file
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 5 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 5[0m
+********************test case 6********************
+Invalid random seed
+Exit status of your code: 0
+[32mValgrind was clean[0m
+[31mtest case 6 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 6[0m
+********************test case 7********************
+Random seed 1
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 7[0m
+********************test case 8********************
+Random seed 13
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 8[0m
+********************test case 9********************
+Random seed 27
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 9[0m
+********************test case 10********************
+Random seed 32
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 10[0m
+********************test case 11********************
+Random seed 48
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 11[0m
+********************test case 12********************
+Random seed 99
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 12[0m
+********************test case 13********************
+Number refers past beginning of story
+Exit status of your code: 0
+[31mtest case 13 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 13[0m
+********************test case 14********************
+Words file with invalid syntax
+Exit status of your code: 0
+[31mtest case 14 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 14[0m
+********************test case 15********************
+Story file with nonexistent category
+Exit status of your code: 0
+[31mtest case 15 Incorrect: Your code doesn't detect wrong case.[0m
+[31mfailed test case 15[0m
+********************test case 16********************
+Word file with long words
+Exit status of your code: 0
+[32mValgrind was clean[0m
+Your output has 0 lines, but we expected 4 lines.
+[31mIncorrect: your output did not match the expected output.[0m
+[31mfailed test case 16[0m
+[31mfailed 16 out of 16 test cases[0m
+Overall Grade: F

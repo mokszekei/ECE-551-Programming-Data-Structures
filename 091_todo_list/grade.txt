@@ -1,0 +1,21 @@
+Grading at 04/11/2020:03:08:29.120992
+For commit ID 324474439f0265df49475fd2661d9fe733f1953c
+Grading at Fri Apr 10 23:08:25 EDT 2020
+Attempting to compile:
+g++ -Wall -Werror --std=gnu++11 -pedantic -ggdb3 -o main.o -c todo_list.cpp
+g++ -Wall -Werror --std=gnu++11 -pedantic -ggdb3 -o todo_list main.o parse.o
+Found binary 'todo_list'
+Test case 1
+Correctly identified error case
+Test case 2
+Correctly identified error case
+Test case 3
+Your output matched what we expected
+Test case 4
+Your output matched what we expected
+Test case 5
+Your output matched what we expected
+Test case 6
+Your output matched what we expected
+
+Overall Grade: PASSED

@@ -1,0 +1,21 @@
+Grading at 01/29/2020:00:51:39.992785
+For commit ID 9569dc94016c85a01127255f1c402251fbb57ada
+Grading at Tue Jan 28 19:51:39 EST 2020
+#################################################
+test input.1:
+Your file matched the expected output
+input.1 passed
+#################################################
+test input.2:
+Your file matched the expected output
+input.2 passed
+#################################################
+test input.3:
+Your file matched the expected output
+input.3 passed
+#################################################
+test input.4:
+Your file matched the expected output
+input.4 passed
+
+Overall Grade: A

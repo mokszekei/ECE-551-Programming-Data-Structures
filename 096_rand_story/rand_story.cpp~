@@ -1,0 +1,34 @@
+#include "rand_story.h"
+
+#include <cstdlib>
+#include <exception>
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <string>
+#include <vector>
+
+int main(int argc, char ** argv) {
+  if (argc != 3) {
+    std::cerr << "Usage: inputFile" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  std::ifstream f1(argv[1]);
+  if (!f1) {
+    std::cerr << "fail to open " << argv[1] << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  std::ifstream f2(argv[2]);
+  if (!f2) {
+    std::cerr << "fail to open " << argv[1] << std::endl;
+    exit(EXIT_FAILURE);
+  };
+
+  Story story;
+  unsigned n = std::stoi(argv[3]);
+
+  story.read_category(f2);
+  story.tellStory(f1, n);
+  story.delet();
+  return (EXIT_SUCCESS);
+}

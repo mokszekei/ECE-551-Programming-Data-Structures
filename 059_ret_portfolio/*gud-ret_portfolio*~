@@ -1,0 +1,63 @@
+Current directory is ~/intro_prog/059_ret_portfolio/
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ret_portfolio...done.
+(gdb) start
+Temporary breakpoint 1 at 0x1a73: file retirement.c, line 261.
+Starting program: /home/sm745/intro_prog/059_ret_portfolio/ret_portfolio sp_data.csv bond_data.csv 1971.12 2017.12\'
+
+Temporary breakpoint 1, main (argc=5, argv=0x7fffffffe4a8) at retirement.c:261
+261	  if (argc != 5) {
+(gdb) n
+265	  FILE * f_sp = fopen(argv[1], "r");
+(gdb) n
+266	  if (f_sp == NULL) {
+(gdb) n
+271	  FILE * f_b = fopen(argv[2], "r");
+(gdb) n
+272	  if (f_b == NULL) {
+(gdb) n
+276	  double start = atof(argv[3]);
+(gdb) n
+277	  double end = atof(argv[4]);
+(gdb) n
+278	  sp_ror_arr_t * sp_ror_arr = readFile_sp(f_sp, start, end, rorFromLine_sp);
+(gdb) n
+279	  b_ror_arr_t * b_ror_arr = readFile_bond(f_b, start, end, rorFromLine_bond);
+(gdb) n
+280	  summary_arr_t * summary_arr = ror_calculater(sp_ror_arr, b_ror_arr);
+(gdb) n
+281	  ret_portfolio_t * sp_port = sp_invest_calculator(summary_arr);
+(gdb) n
+282	  ret_portfolio_t * b_port = b_invest_calculator(summary_arr);
+(gdb) n
+283	  ret_portfolio_t * life_port = life_invest_calculator(summary_arr);
+(gdb) p summary_arr->summary[0].deposit
+$1 = 100
+(gdb) summary_arr->summary[1].deposit
+Undefined command: "summary_arr->summary".  Try "help".
+(gdb) p summary_arr->summary[1].deposit    
+$2 = 100
+(gdb) p summary_arr->summary[2].deposit    
+$3 = 100
+(gdb) p summary_arr->summary[0].sp_ror    p summary_arr->summary[0].sp_ror    
+$5 = 0.1249789923027796
+(gdb) p summary_arr->summary[0].bond_ror 
+$6 = 0.49583333333333335
+(gdb) p summary_arr->summary[0].dates
+$7 = 1972.01
+(gdb) q
+
+Debugger finished

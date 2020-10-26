@@ -1,0 +1,55 @@
+Grading at 02/02/2020:04:50:56.394570
+For commit ID eb8da841386d3c3018f82e0d8e8807bdfc30b51b
+Grading at Sat Feb  1 23:50:55 EST 2020
+**Testing broken implementation 10 **
+-------------------------------------
+
+The function failed to compute power(3,3)
+**Testing broken implementation 11 **
+-------------------------------------
+
+The function failed to compute power(342424,1)
+**Testing broken implementation 1 **
+-------------------------------------
+
+The function failed to compute power(0,1)
+**Testing broken implementation 2 **
+-------------------------------------
+
+The function failed to compute power(0,1)
+**Testing broken implementation 3 **
+-------------------------------------
+
+The function failed to compute power(0,0)
+**Testing broken implementation 4 **
+-------------------------------------
+
+The function failed to compute power(342424,1)
+**Testing broken implementation 5 **
+-------------------------------------
+
+The function failed to compute power(3,3)
+**Testing broken implementation 6 **
+-------------------------------------
+
+The function failed to compute power(0,1)
+**Testing broken implementation 7 **
+-------------------------------------
+
+The function failed to compute power(0,1)
+**Testing broken implementation 8 **
+-------------------------------------
+
+The function failed to compute power(3,3)
+**Testing broken implementation 9 **
+-------------------------------------
+
+The function failed to compute power(3,3)
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED

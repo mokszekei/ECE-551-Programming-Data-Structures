@@ -1,0 +1,18 @@
+Grading at 04/04/2020:06:00:35.932963
+For commit ID f7c70baf0f40685b654626d0f889095ae5ffea3d
+Grading at Sat Apr  4 02:00:33 EDT 2020
+Attempting to compile:
+rm -f *~ parse_input
+g++ -o parse_input -std=gnu++98 -Wall -Werror -ggdb3 parse.cpp
+Found binary 'parse_input'
+Test case 1
+Correctly identified error case
+Test case 2
+Correctly identified error case
+Test case 3
+Your output matched what we expected
+Test case 4
+Your output matched what we expected
+Correctly printed to std::cerr
+
+Overall Grade: PASSED

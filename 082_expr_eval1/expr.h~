@@ -1,0 +1,24 @@
+#include <sstream>
+#include <string>
+
+//Parent class does not necessarily need to declare private field,
+class Expression {
+ public:
+  virtual std::string toString() const = 0;
+};
+
+class NumExpression : public Expression {
+ private:
+  long num;
+
+ public:
+  NumExpression(long n) : num(n) {}
+  virtual std::string toString() {
+    std::stringstream s;
+    s << num;
+    return s.str();
+  }
+};
+
+class PlusExpression : public Expression {
+  virtual std::string toString() const = 0;

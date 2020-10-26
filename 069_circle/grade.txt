@@ -1,0 +1,13 @@
+Grading at 03/16/2020:02:58:02.144654
+For commit ID 06bcc8c44840ed66fb35b531b282d546669de95e
+Grading at Sun Mar 15 22:58:00 EDT 2020
+Attempting to compile:
+rm -f  circle.o  point.o  main.o circles *~
+g++  -Wall -Werror -std=gnu++98 -pedantic -ggdb3  -c -o circle.o circle.cpp
+g++  -Wall -Werror -std=gnu++98 -pedantic -ggdb3  -c -o point.o point.cpp
+g++  -Wall -Werror -std=gnu++98 -pedantic -ggdb3  -c -o main.o main.cpp
+g++ -Wall -Werror -std=gnu++98 -pedantic -ggdb3 -o circles  circle.o  point.o  main.o
+Found binary 'circles'
+Your output matched what we expected
+
+Overall Grade: PASSED

@@ -1,0 +1,152 @@
+#include "stats.h"
+
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// any other headers you need here
+
+stat_t parseLine(const char * line) {
+  // STEP 1: write me
+
+  //First check whether the input is NULL
+  if (!line) {
+    printf("The input is NULL");
+    exit(EXIT_FAILURE);
+  }
+
+  //Since the string end with null terminator, we cannot count the "\o" in length of string.
+  if (*line == '\0') {
+    line++;
+  }
+
+  stat_t stat;
+
+  unsigned long line_len = strlen(line);
+
+  unsigned long name_len = 0;
+  unsigned long points_len = 0;
+  unsigned long games_len = 0;
+
+  // Check whether the input has ":", if not, the following operation would fail.
+  if (!strchr(line, ':')) {
+    printf("The input has no ':'. The input format is invalid");
+    exit(EXIT_FAILURE);
+  }
+
+  char * p1 = strchr(line, ':');
+  char * p2 = strrchr(line, ':');
+
+  if (!strcmp(p1, p2)) {
+    printf("The input is invalid, it only has one ':'.");
+    exit(EXIT_SUCCESS);
+  }
+
+  int count = 0;
+
+  while (line[count] != ':') {
+    count++;
+  }
+  name_len = count;
+  count = 1;
+  while (p1[count] != ':') {
+    count++;
+  }
+  points_len = count - 1;
+  games_len = line_len - name_len - points_len - 2;
+
+  ///strncmp
+  char name[name_len + 1];
+  char points[points_len + 1];
+  char games[games_len + 1];
+
+  strncpy(name, line, name_len);
+  strncpy(points, p1 + 1, points_len);
+  strncpy(games, p2 + 1, games_len);
+
+  ///Check whether the input is valid:
+
+  if ((name_len == 0) || (points_len == 0) || (games_len == 0)) {
+    printf("The input lack one of the following element: name,points,games.");
+    exit(EXIT_FAILURE);
+  }
+
+  if (name_len > 29) {
+    printf("The name is too long");
+    exit(EXIT_FAILURE);
+  }
+
+  //Check whether the name is valid (letter or space)
+  const char * space = " ";
+  const char * ch = "'";
+  const char * ch2 = ".";
+  for (unsigned long i = 0; i < name_len; i++)
+    if (!(isupper((int)name[i]) || islower((int)name[i]) || name[i] == *space ||
+          name[i] == *ch || name[i] == *ch2)) {
+      printf("Name is invalid");
+      exit(EXIT_FAILURE);
+    }
+
+  //Check whether the games is all number
+  for (unsigned long i = 0; i < games_len; i++)
+    if (!isdigit((int)games[i])) {
+      printf("Input of games is invalid");
+      exit(EXIT_FAILURE);
+    }
+  //Chekc whether the points is all number
+  for (unsigned long i = 0; i < points_len; i++)
+    if (!isdigit((int)points[i])) {
+      printf("Input of games is invalid");
+      exit(EXIT_FAILURE);
+    }
+
+  strcpy(stat.player, name);
+  stat.points = atoi(points);
+  stat.games = atoi(games);
+
+  name_len = 0;
+  points_len = 0;
+  games_len = 0;
+
+  return stat;
+}
+
+double calcGamePerformance(stat_t * statarr, unsigned long * pointarr, size_t nplayers) {
+  // STEP 2: write me
+
+  int new_points = 0;
+  double avg_points = 0;
+
+  for (size_t i = 0; i < nplayers; i++) {
+    new_points += pointarr[i];
+    avg_points += statarr[i].points / (double)statarr[i].games;
+  }
+  return new_points / avg_points;
+}
+
+void addGameStats(stat_t * statarr, unsigned long * pointarr, size_t nplayers) {
+  // STEP 3: write me
+
+  for (size_t i = 0; i < nplayers; i++) {
+    statarr[i].points += pointarr[i];
+    statarr[i].games += 1;
+  }
+}
+
+void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) {
+  // STEP 4: write me
+
+  double best_performance = 0;
+  size_t best_player = 0;
+  for (size_t i = 0; i < nplayers; i++) {
+    double performance = pointarr[i] / (statarr[i].points / (double)statarr[i].games);
+    if (performance > best_performance) {
+      best_performance = performance;
+      best_player = i;
+    }
+  }
+  printf("The breakout player this game is %s with %.0f%% of agv ppg\n",
+         statarr[best_player].player,
+         best_performance);
+}

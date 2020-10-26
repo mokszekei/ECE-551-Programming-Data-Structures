@@ -1,0 +1,12 @@
+
+#include "circle.h"
+
+#include <cmath>
+
+void Circle::move(double dx, double dy) {
+  center.move(dx, dy);
+}
+
+double Circle::intersectionArea(const Circle & otherCircle) {
+  double d = center.distanceFrom(otherCircle.center);
+  if (d < r + otherCircle.r) {

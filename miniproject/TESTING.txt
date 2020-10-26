@@ -1,0 +1,18 @@
+
+The programme takes three arguments: asset file, correlation file, a number(whether short sell or not, 1=shortsell. 0=no shortsell)
+
+The programme will be test with the following test case:
+
+1.Asset file contains fewer asset info than correlation file.
+2.Correlation file contain fewer asset infor than asset file.
+3.Both file have same assets but in different asset order.
+4.Correlation file include a correlation matrix that is not square (nCol<nRow);
+5.One of the rows of correlation matrix has incomplete elements.
+6.Invalid input format (e.g. space seperated, no '%');
+
+The programme should detect the above-mentioned invalid input.
+
+Other test case:
+
+1. input files with larger or smaller size.
+2. enlarge the range of ROR searching.
